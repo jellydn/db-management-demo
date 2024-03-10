@@ -4,8 +4,8 @@
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",
-    "prisma": "^5.10.2",
-    "tsx": "^4.7.1"
+    "prisma": "5.10.2",
+    "tsx": "4.7.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
