@@ -34,3 +34,8 @@ db-doc:
 	@bun prisma db pull
 	@bun prisma generate
 	@tbls doc --rm-dist
+
+.PHONY: studio
+studio:
+	@echo "open prisma studio"
+	@bun prisma studio
