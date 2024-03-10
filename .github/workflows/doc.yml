@@ -40,3 +40,15 @@ jobs:
       - uses: k1low/setup-tbls@v1
       - name: Run tbls for generate database document
         run: make db-doc
+
+      - uses: actions/setup-python@v3
+      - uses: pre-commit/action@v3.0.1
+      - name: Run pre-commit
+        run: pre-commit run --all-files
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(db): auto generate docs"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
