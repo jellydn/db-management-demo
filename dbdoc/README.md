@@ -9,7 +9,24 @@
 
 ## Relations
 
-![er](schema.svg)
+```mermaid
+erDiagram
+
+"public.post" }o--|| "public.user" : "FOREIGN KEY ("authorId") REFERENCES "user"(id) ON UPDATE CASCADE ON DELETE RESTRICT"
+
+"public.user" {
+  integer id
+  text email
+  text name
+}
+"public.post" {
+  integer id
+  text title
+  text content
+  boolean published
+  integer authorId FK
+}
+```
 
 ---
 

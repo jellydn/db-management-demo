@@ -8,7 +8,7 @@ migrate-dev:
 	@echo "generate database"
 	@bun prisma migrate dev
 
-.PHONY: migrate-status	
+.PHONY: migrate-status
 migrate-status:
 	@echo "check migration status"
 	@bun prisma migrate status
@@ -33,7 +33,7 @@ db-doc:
 	@echo "generate database documentation"
 	@bun prisma db pull
 	@bun prisma generate
-	@tbls doc --rm-dist
+	@tbls doc --rm-dist --er-format mermaid
 
 .PHONY: studio
 studio:
