@@ -13,6 +13,11 @@ migrate-status:
 	@echo "check migration status"
 	@bun prisma migrate status
 
+.PHONY: reset
+reset:
+	@echo "reset database"
+	@bun prisma migrate reset --force
+
 .PHONY: seed
 seed:
 	@echo "seed database"
