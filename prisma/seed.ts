@@ -11,6 +11,19 @@ async function main() {
     },
   });
   console.log(user);
+
+  const userWithPost = await prisma.user.create({
+    data: {
+      name: "Bob",
+      email: "bob@prisma.io",
+      posts: {
+        create: {
+          title: "Hello World",
+        },
+      },
+    },
+  });
+  console.log(userWithPost);
 }
 
 main()
