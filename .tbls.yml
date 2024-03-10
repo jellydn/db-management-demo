@@ -3,7 +3,11 @@
 # DSN (Database Source Name) to connect database
 dsn: postgres://postgres:mysecretpassword@localhost:5432/mydb?sslmode=disable
 
-# Liner settings
+# Filter
+exclude:
+  - _prisma_migrations
+
+# Linter settings
 lint:
   requireColumnComment:
     enabled: true

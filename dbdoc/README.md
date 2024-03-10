@@ -2,11 +2,10 @@
 
 ## Tables
 
-| Name                                                       | Columns | Comment | Type       |
-| ---------------------------------------------------------- | ------- | ------- | ---------- |
-| [public.\_prisma_migrations](public._prisma_migrations.md) | 8       |         | BASE TABLE |
-| [public.User](public.User.md)                              | 3       |         | BASE TABLE |
-| [public.Post](public.Post.md)                              | 5       |         | BASE TABLE |
+| Name                          | Columns | Comment | Type       |
+| ----------------------------- | ------- | ------- | ---------- |
+| [public.user](public.user.md) | 3       |         | BASE TABLE |
+| [public.post](public.post.md) | 5       |         | BASE TABLE |
 
 ## Relations
 

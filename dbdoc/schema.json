@@ -3,93 +3,7 @@
   "desc": "",
   "tables": [
     {
-      "name": "public._prisma_migrations",
-      "type": "BASE TABLE",
-      "comment": "",
-      "columns": [
-        {
-          "name": "id",
-          "type": "varchar(36)",
-          "nullable": false,
-          "default": null,
-          "comment": ""
-        },
-        {
-          "name": "checksum",
-          "type": "varchar(64)",
-          "nullable": false,
-          "default": null,
-          "comment": ""
-        },
-        {
-          "name": "finished_at",
-          "type": "timestamp with time zone",
-          "nullable": true,
-          "default": null,
-          "comment": ""
-        },
-        {
-          "name": "migration_name",
-          "type": "varchar(255)",
-          "nullable": false,
-          "default": null,
-          "comment": ""
-        },
-        {
-          "name": "logs",
-          "type": "text",
-          "nullable": true,
-          "default": null,
-          "comment": ""
-        },
-        {
-          "name": "rolled_back_at",
-          "type": "timestamp with time zone",
-          "nullable": true,
-          "default": null,
-          "comment": ""
-        },
-        {
-          "name": "started_at",
-          "type": "timestamp with time zone",
-          "nullable": false,
-          "default": "now()",
-          "comment": ""
-        },
-        {
-          "name": "applied_steps_count",
-          "type": "integer",
-          "nullable": false,
-          "default": "0",
-          "comment": ""
-        }
-      ],
-      "indexes": [
-        {
-          "name": "_prisma_migrations_pkey",
-          "def": "CREATE UNIQUE INDEX _prisma_migrations_pkey ON public._prisma_migrations USING btree (id)",
-          "table": "public._prisma_migrations",
-          "columns": ["id"],
-          "comment": ""
-        }
-      ],
-      "constraints": [
-        {
-          "name": "_prisma_migrations_pkey",
-          "type": "PRIMARY KEY",
-          "def": "PRIMARY KEY (id)",
-          "table": "public._prisma_migrations",
-          "referenced_table": "",
-          "columns": ["id"],
-          "referenced_columns": [],
-          "comment": ""
-        }
-      ],
-      "triggers": [],
-      "def": ""
-    },
-    {
-      "name": "public.User",
+      "name": "public.user",
       "type": "BASE TABLE",
       "comment": "",
       "columns": [
@@ -97,7 +11,7 @@
           "name": "id",
           "type": "integer",
           "nullable": false,
-          "default": "nextval('\"User_id_seq\"'::regclass)",
+          "default": "nextval('user_id_seq'::regclass)",
           "comment": ""
         },
         {
@@ -117,26 +31,26 @@
       ],
       "indexes": [
         {
-          "name": "User_pkey",
-          "def": "CREATE UNIQUE INDEX \"User_pkey\" ON public.\"User\" USING btree (id)",
-          "table": "public.User",
+          "name": "user_pkey",
+          "def": "CREATE UNIQUE INDEX user_pkey ON public.\"user\" USING btree (id)",
+          "table": "public.user",
           "columns": ["id"],
           "comment": ""
         },
         {
-          "name": "User_email_key",
-          "def": "CREATE UNIQUE INDEX \"User_email_key\" ON public.\"User\" USING btree (email)",
-          "table": "public.User",
+          "name": "user_email_key",
+          "def": "CREATE UNIQUE INDEX user_email_key ON public.\"user\" USING btree (email)",
+          "table": "public.user",
           "columns": ["email"],
           "comment": ""
         }
       ],
       "constraints": [
         {
-          "name": "User_pkey",
+          "name": "user_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (id)",
-          "table": "public.User",
+          "table": "public.user",
           "referenced_table": "",
           "columns": ["id"],
           "referenced_columns": [],
@@ -147,7 +61,7 @@
       "def": ""
     },
     {
-      "name": "public.Post",
+      "name": "public.post",
       "type": "BASE TABLE",
       "comment": "",
       "columns": [
@@ -155,7 +69,7 @@
           "name": "id",
           "type": "integer",
           "nullable": false,
-          "default": "nextval('\"Post_id_seq\"'::regclass)",
+          "default": "nextval('post_id_seq'::regclass)",
           "comment": ""
         },
         {
@@ -189,29 +103,29 @@
       ],
       "indexes": [
         {
-          "name": "Post_pkey",
-          "def": "CREATE UNIQUE INDEX \"Post_pkey\" ON public.\"Post\" USING btree (id)",
-          "table": "public.Post",
+          "name": "post_pkey",
+          "def": "CREATE UNIQUE INDEX post_pkey ON public.post USING btree (id)",
+          "table": "public.post",
           "columns": ["id"],
           "comment": ""
         }
       ],
       "constraints": [
         {
-          "name": "Post_authorId_fkey",
+          "name": "post_authorId_fkey",
           "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (\"authorId\") REFERENCES \"User\"(id) ON UPDATE CASCADE ON DELETE RESTRICT",
-          "table": "public.Post",
-          "referenced_table": "User",
+          "def": "FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT",
+          "table": "public.post",
+          "referenced_table": "user",
           "columns": ["authorId"],
           "referenced_columns": ["id"],
           "comment": ""
         },
         {
-          "name": "Post_pkey",
+          "name": "post_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (id)",
-          "table": "public.Post",
+          "table": "public.post",
           "referenced_table": "",
           "columns": ["id"],
           "referenced_columns": [],
@@ -224,13 +138,13 @@
   ],
   "relations": [
     {
-      "table": "public.Post",
+      "table": "public.post",
       "columns": ["authorId"],
       "cardinality": "Zero or more",
-      "parent_table": "public.User",
+      "parent_table": "public.user",
       "parent_columns": ["id"],
       "parent_cardinality": "Exactly one",
-      "def": "FOREIGN KEY (\"authorId\") REFERENCES \"User\"(id) ON UPDATE CASCADE ON DELETE RESTRICT",
+      "def": "FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT",
       "virtual": false
     }
   ],

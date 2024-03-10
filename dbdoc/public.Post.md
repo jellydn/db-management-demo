@@ -1,33 +1,33 @@
-# public.Post
+# public.post
 
 ## Description
 
 ## Columns
 
-| Name      | Type    | Default                            | Nullable | Children | Parents                       | Comment |
-| --------- | ------- | ---------------------------------- | -------- | -------- | ----------------------------- | ------- |
-| id        | integer | nextval('"Post_id_seq"'::regclass) | false    |          |                               |         |
-| title     | text    |                                    | false    |          |                               |         |
-| content   | text    |                                    | true     |          |                               |         |
-| published | boolean | false                              | false    |          |                               |         |
-| authorId  | integer |                                    | false    |          | [public.User](public.User.md) |         |
+| Name      | Type    | Default                          | Nullable | Children | Parents                       | Comment |
+| --------- | ------- | -------------------------------- | -------- | -------- | ----------------------------- | ------- |
+| id        | integer | nextval('post_id_seq'::regclass) | false    |          |                               |         |
+| title     | text    |                                  | false    |          |                               |         |
+| content   | text    |                                  | true     |          |                               |         |
+| published | boolean | false                            | false    |          |                               |         |
+| authorId  | integer |                                  | false    |          | [public.user](public.user.md) |         |
 
 ## Constraints
 
 | Name               | Type        | Definition                                                                          |
 | ------------------ | ----------- | ----------------------------------------------------------------------------------- |
-| Post_authorId_fkey | FOREIGN KEY | FOREIGN KEY ("authorId") REFERENCES "User"(id) ON UPDATE CASCADE ON DELETE RESTRICT |
-| Post_pkey          | PRIMARY KEY | PRIMARY KEY (id)                                                                    |
+| post_authorId_fkey | FOREIGN KEY | FOREIGN KEY ("authorId") REFERENCES "user"(id) ON UPDATE CASCADE ON DELETE RESTRICT |
+| post_pkey          | PRIMARY KEY | PRIMARY KEY (id)                                                                    |
 
 ## Indexes
 
-| Name      | Definition                                                        |
-| --------- | ----------------------------------------------------------------- |
-| Post_pkey | CREATE UNIQUE INDEX "Post_pkey" ON public."Post" USING btree (id) |
+| Name      | Definition                                                    |
+| --------- | ------------------------------------------------------------- |
+| post_pkey | CREATE UNIQUE INDEX post_pkey ON public.post USING btree (id) |
 
 ## Relations
 
-![er](public.Post.svg)
+![er](public.post.svg)
 
 ---
 
