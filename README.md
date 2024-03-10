@@ -22,13 +22,13 @@ bun install
 docker-compose up -d
 ```
 
-2. Generate the Prisma client:
+2. Create a `.env` file based on the `.env.example` file.
+
+3. Generate the Prisma client:
 
 ```sh
-bun prisma generate
+make migrate-dev
 ```
-
-3. Create a `.env` file based on the `.env.example` file.
 
 4. Generate the documentation:
 
@@ -39,8 +39,10 @@ tbls doc
 Alternatively, seed the database with:
 
 ```sh
-bun prisma db seed
+make seed
 ```
+
+More commands can be found in the [`Makefile`](./Makefile).
 
 # Resources
 
