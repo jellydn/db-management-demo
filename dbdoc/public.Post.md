@@ -4,25 +4,25 @@
 
 ## Columns
 
-| Name | Type | Default | Nullable | Children | Parents | Comment |
-| ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| id | integer | nextval('"Post_id_seq"'::regclass) | false |  |  |  |
-| title | text |  | false |  |  |  |
-| content | text |  | true |  |  |  |
-| published | boolean | false | false |  |  |  |
-| authorId | integer |  | false |  | [public.User](public.User.md) |  |
+| Name      | Type    | Default                            | Nullable | Children | Parents                       | Comment |
+| --------- | ------- | ---------------------------------- | -------- | -------- | ----------------------------- | ------- |
+| id        | integer | nextval('"Post_id_seq"'::regclass) | false    |          |                               |         |
+| title     | text    |                                    | false    |          |                               |         |
+| content   | text    |                                    | true     |          |                               |         |
+| published | boolean | false                              | false    |          |                               |         |
+| authorId  | integer |                                    | false    |          | [public.User](public.User.md) |         |
 
 ## Constraints
 
-| Name | Type | Definition |
-| ---- | ---- | ---------- |
+| Name               | Type        | Definition                                                                          |
+| ------------------ | ----------- | ----------------------------------------------------------------------------------- |
 | Post_authorId_fkey | FOREIGN KEY | FOREIGN KEY ("authorId") REFERENCES "User"(id) ON UPDATE CASCADE ON DELETE RESTRICT |
-| Post_pkey | PRIMARY KEY | PRIMARY KEY (id) |
+| Post_pkey          | PRIMARY KEY | PRIMARY KEY (id)                                                                    |
 
 ## Indexes
 
-| Name | Definition |
-| ---- | ---------- |
+| Name      | Definition                                                        |
+| --------- | ----------------------------------------------------------------- |
 | Post_pkey | CREATE UNIQUE INDEX "Post_pkey" ON public."Post" USING btree (id) |
 
 ## Relations
