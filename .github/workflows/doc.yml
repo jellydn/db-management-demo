@@ -39,4 +39,4 @@ jobs:
           make migrate-dev
       - uses: k1low/setup-tbls@v1
       - name: Run tbls for generate database document
-        run: tbls doc
+        run: make db-doc
