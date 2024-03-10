@@ -5,6 +5,13 @@ const prisma = new PrismaClient();
 async function main() {
   const users = await prisma.user.findMany();
   console.log(users);
+
+  const usersWithPosts = await prisma.user.findMany({
+    include: {
+      posts: true,
+    },
+  });
+  console.dir(usersWithPosts, { depth: null });
 }
 
 main()
