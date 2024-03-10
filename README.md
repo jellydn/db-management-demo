@@ -33,7 +33,7 @@ make migrate-dev
 4. Generate the documentation:
 
 ```sh
-tbls doc
+make db-doc
 ```
 
 Alternatively, seed the database with:
