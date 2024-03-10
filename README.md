@@ -3,6 +3,8 @@
   This is simple demo of how to manage database using prisma and tbls for documentation.
 </p>
 
+[![IT Man - Mastering Database Documentation with tbls: A Complete Guide](https://i.ytimg.com/vi/qMJAiOx9ET0/hqdefault.jpg)](https://www.youtube.com/watch?v=qMJAiOx9ET0)
+
 ## Prerequisites
 
 - [Bun — A fast all-in-one JavaScript runtime](https://bun.sh/)
