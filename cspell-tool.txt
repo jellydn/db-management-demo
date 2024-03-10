@@ -1,0 +1,13 @@
+varchar
+pkey
+tbls
+nextval
+regclass
+fkey
+mydb
+pgdg
+aarch
+mysecretpassword
+Quickstart
+ingestr
+pg_isready

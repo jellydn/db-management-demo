@@ -1,0 +1,34 @@
+# .github/workflows/doc.yml
+name: Document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  doc:
+    runs-on: ubuntu-latest
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: mysecretpassword
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
+    steps:
+      - name: Checkout .tbls.yml
+        uses: actions/checkout@v3
+      - uses: k1low/setup-tbls@v1
+      - name: Run tbls for generate database document
+        run: tbls doc
