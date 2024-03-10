@@ -52,7 +52,20 @@ More commands can be found in the [`Makefile`](./Makefile).
 - [k1LoW/tbls: tbls is a CI-Friendly tool for document a database, written in Go.](https://github.com/k1LoW/tbls#quick-start)
 - [bruin-data/ingestr: ingestr is a CLI tool to copy data between any databases with a single command seamlessly.](https://github.com/bruin-data/ingestr)
 - [Creating PostgreSQL service containers](https://docs.github.com/en/actions/using-containerized-services/creating-postgresql-service-containers)
+- [Automatically commit and push changed files back to GitHub with GitHub Action](https://github.com/stefanzweifel/git-auto-commit-action)
+
+## Author
+
+👤 **Huynh Duc Dung**
+
+- Website: https://productsway.com/
+- Twitter: [@jellydn](https://twitter.com/jellydn)
+- Github: [@jellydn](https://github.com/jellydn)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
+[![kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dunghd)
+[![paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/dunghd)
+[![buymeacoffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dunghd)
