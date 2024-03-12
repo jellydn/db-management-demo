@@ -4,14 +4,14 @@
   "type": "module",
   "devDependencies": {
     "@types/bun": "latest",
-    "prisma": "5.10.2",
+    "prisma": "5.11.0",
     "tsx": "4.7.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@prisma/client": "5.10.2"
+    "@prisma/client": "5.11.0"
   },
   "prisma": {
     "seed": "tsx ./prisma/seed.ts"
