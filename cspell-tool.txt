@@ -11,3 +11,6 @@ mysecretpassword
 Quickstart
 ingestr
 pg_isready
+datasource
+autoincrement
+typeorm
