@@ -7,20 +7,20 @@
     "dev": "tsx ./typeorm/index.ts"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "8.4.1",
     "@types/bun": "latest",
     "prisma": "5.14.0",
     "tsx": "4.10.2",
-    "typeorm-model-generator": "^0.4.6"
+    "typeorm-model-generator": "0.4.6"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "@prisma/client": "5.14.0",
-    "pg": "^8.11.5",
-    "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.20"
+    "pg": "8.11.5",
+    "reflect-metadata": "0.2.2",
+    "typeorm": "0.3.20"
   },
   "prisma": {
     "seed": "tsx ./prisma/seed.ts"
