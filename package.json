@@ -10,7 +10,7 @@
     "@faker-js/faker": "8.4.1",
     "@types/bun": "latest",
     "prisma": "5.15.1",
-    "tsx": "4.15.6",
+    "tsx": "4.15.7",
     "typeorm-model-generator": "0.4.6"
   },
   "peerDependencies": {
