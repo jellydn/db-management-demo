@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "@prisma/client": "5.22.0",
-    "pg": "8.16.1",
+    "pg": "8.16.2",
     "reflect-metadata": "0.2.2",
-    "typeorm": "0.3.24"
+    "typeorm": "0.3.25"
   },
   "prisma": {
     "seed": "tsx ./prisma/seed.ts"
