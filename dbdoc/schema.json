@@ -1,1 +1,154 @@
-{"name":"mydb","tables":[{"name":"public.user","type":"BASE TABLE","columns":[{"name":"id","type":"integer","nullable":false,"default":"nextval('user_id_seq'::regclass)"},{"name":"email","type":"text","nullable":false},{"name":"name","type":"text","nullable":true}],"indexes":[{"name":"user_pkey","def":"CREATE UNIQUE INDEX user_pkey ON public.\"user\" USING btree (id)","table":"public.user","columns":["id"]},{"name":"user_email_key","def":"CREATE UNIQUE INDEX user_email_key ON public.\"user\" USING btree (email)","table":"public.user","columns":["email"]}],"constraints":[{"name":"user_pkey","type":"PRIMARY KEY","def":"PRIMARY KEY (id)","table":"public.user","referenced_table":"","columns":["id"]}]},{"name":"public.post","type":"BASE TABLE","columns":[{"name":"id","type":"integer","nullable":false,"default":"nextval('post_id_seq'::regclass)"},{"name":"title","type":"text","nullable":false},{"name":"content","type":"text","nullable":true},{"name":"published","type":"boolean","nullable":false,"default":"false"},{"name":"authorId","type":"integer","nullable":false}],"indexes":[{"name":"post_pkey","def":"CREATE UNIQUE INDEX post_pkey ON public.post USING btree (id)","table":"public.post","columns":["id"]}],"constraints":[{"name":"post_authorId_fkey","type":"FOREIGN KEY","def":"FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT","table":"public.post","referenced_table":"user","columns":["authorId"],"referenced_columns":["id"]},{"name":"post_pkey","type":"PRIMARY KEY","def":"PRIMARY KEY (id)","table":"public.post","referenced_table":"","columns":["id"]}]}],"relations":[{"table":"public.post","columns":["authorId"],"cardinality":"zero_or_more","parent_table":"public.user","parent_columns":["id"],"parent_cardinality":"exactly_one","def":"FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT"}],"driver":{"name":"postgres","database_version":"PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit","meta":{"current_schema":"public","search_paths":["postgres","public"],"dict":{"Functions":"Stored procedures and functions"}}}}
+{
+  "name": "mydb",
+  "tables": [
+    {
+      "name": "public.user",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false,
+          "default": "nextval('user_id_seq'::regclass)"
+        },
+        {
+          "name": "email",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "user_pkey",
+          "def": "CREATE UNIQUE INDEX user_pkey ON public.\"user\" USING btree (id)",
+          "table": "public.user",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "user_email_key",
+          "def": "CREATE UNIQUE INDEX user_email_key ON public.\"user\" USING btree (email)",
+          "table": "public.user",
+          "columns": [
+            "email"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "user_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.user",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.post",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false,
+          "default": "nextval('post_id_seq'::regclass)"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "content",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "published",
+          "type": "boolean",
+          "nullable": false,
+          "default": "false"
+        },
+        {
+          "name": "authorId",
+          "type": "integer",
+          "nullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "post_pkey",
+          "def": "CREATE UNIQUE INDEX post_pkey ON public.post USING btree (id)",
+          "table": "public.post",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "post_authorId_fkey",
+          "type": "FOREIGN KEY",
+          "def": "FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT",
+          "table": "public.post",
+          "referenced_table": "user",
+          "columns": [
+            "authorId"
+          ],
+          "referenced_columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "post_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.post",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "table": "public.post",
+      "columns": [
+        "authorId"
+      ],
+      "cardinality": "zero_or_more",
+      "parent_table": "public.user",
+      "parent_columns": [
+        "id"
+      ],
+      "parent_cardinality": "exactly_one",
+      "def": "FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT"
+    }
+  ],
+  "driver": {
+    "name": "postgres",
+    "database_version": "PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit",
+    "meta": {
+      "current_schema": "public",
+      "search_paths": [
+        "postgres",
+        "public"
+      ],
+      "dict": {
+        "Functions": "Stored procedures and functions"
+      }
+    }
+  }
+}
