@@ -42,6 +42,26 @@
       ],
       "constraints": [
         {
+          "name": "user_email_not_null",
+          "type": "n",
+          "def": "NOT NULL email",
+          "table": "public.user",
+          "referenced_table": "",
+          "columns": [
+            "email"
+          ]
+        },
+        {
+          "name": "user_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.user",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
           "name": "user_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (id)",
@@ -97,6 +117,46 @@
       ],
       "constraints": [
         {
+          "name": "post_authorId_not_null",
+          "type": "n",
+          "def": "NOT NULL \"authorId\"",
+          "table": "public.post",
+          "referenced_table": "",
+          "columns": [
+            "authorId"
+          ]
+        },
+        {
+          "name": "post_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.post",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "post_published_not_null",
+          "type": "n",
+          "def": "NOT NULL published",
+          "table": "public.post",
+          "referenced_table": "",
+          "columns": [
+            "published"
+          ]
+        },
+        {
+          "name": "post_title_not_null",
+          "type": "n",
+          "def": "NOT NULL title",
+          "table": "public.post",
+          "referenced_table": "",
+          "columns": [
+            "title"
+          ]
+        },
+        {
           "name": "post_authorId_fkey",
           "type": "FOREIGN KEY",
           "def": "FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT",
@@ -139,7 +199,7 @@
   ],
   "driver": {
     "name": "postgres",
-    "database_version": "PostgreSQL 17.6 (Debian 17.6-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "database_version": "PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
     "meta": {
       "current_schema": "public",
       "search_paths": [

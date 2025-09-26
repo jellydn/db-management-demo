@@ -14,6 +14,8 @@
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| user_email_not_null | n | NOT NULL email |
+| user_id_not_null | n | NOT NULL id |
 | user_pkey | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes

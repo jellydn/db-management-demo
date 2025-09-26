@@ -16,6 +16,10 @@
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| post_authorId_not_null | n | NOT NULL "authorId" |
+| post_id_not_null | n | NOT NULL id |
+| post_published_not_null | n | NOT NULL published |
+| post_title_not_null | n | NOT NULL title |
 | post_authorId_fkey | FOREIGN KEY | FOREIGN KEY ("authorId") REFERENCES "user"(id) ON UPDATE CASCADE ON DELETE RESTRICT |
 | post_pkey | PRIMARY KEY | PRIMARY KEY (id) |
 
