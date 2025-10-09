@@ -42,7 +42,7 @@ jobs:
         run: make db-doc
 
       - name: Push changes to the repository
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore(db): auto generate docs"
           commit_user_name: "github-actions[bot]"
