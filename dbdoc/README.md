@@ -12,7 +12,7 @@
 ```mermaid
 erDiagram
 
-"public.post" }o--|| "public.user" : "FOREIGN KEY ("authorId") REFERENCES "user"(id) ON UPDATE CASCADE ON DELETE RESTRICT"
+"public.post" }o--|| "public.user" : "FOREIGN KEY (#quot;authorId#quot;) REFERENCES #quot;user#quot;(id) ON UPDATE CASCADE ON DELETE RESTRICT"
 
 "public.user" {
   integer id
