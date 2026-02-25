@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@prisma/client": "5.22.0",
-    "pg": "8.18.0",
+    "pg": "8.19.0",
     "reflect-metadata": "0.2.2",
     "typeorm": "0.3.28"
   },
