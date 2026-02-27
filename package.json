@@ -9,7 +9,7 @@
   "devDependencies": {
     "@faker-js/faker": "8.4.1",
     "@types/bun": "latest",
-    "prisma": "5.22.0",
+    "prisma": "7.4.2",
     "tsx": "4.21.0",
     "typeorm-model-generator": "0.4.6"
   },
@@ -17,7 +17,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@prisma/client": "5.22.0",
+    "@prisma/client": "7.4.2",
     "pg": "8.19.0",
     "reflect-metadata": "0.2.2",
     "typeorm": "0.3.28"
