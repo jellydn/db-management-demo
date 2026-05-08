@@ -20,7 +20,7 @@
     "@prisma/client": "5.22.0",
     "pg": "8.20.0",
     "reflect-metadata": "0.2.2",
-    "typeorm": "0.3.28"
+    "typeorm": "0.3.29"
   },
   "prisma": {
     "seed": "tsx ./prisma/seed.ts"
