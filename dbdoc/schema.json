@@ -161,7 +161,7 @@
           "type": "FOREIGN KEY",
           "def": "FOREIGN KEY (\"authorId\") REFERENCES \"user\"(id) ON UPDATE CASCADE ON DELETE RESTRICT",
           "table": "public.post",
-          "referenced_table": "user",
+          "referenced_table": "public.user",
           "columns": [
             "authorId"
           ],
