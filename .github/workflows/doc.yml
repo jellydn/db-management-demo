@@ -28,21 +28,21 @@ jobs:
           - 5432:5432
     steps:
       - name: Checkout .tbls.yml
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.3.1
       - name: Install bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v1.2.2
       - name: Install dependencies
         run: bun install
       - name: Run migrations
         run: |
           cp .env.example .env
           make migrate-dev
-      - uses: k1low/setup-tbls@v1
+      - uses: k1low/setup-tbls@v1.4.0
       - name: Run tbls for generate database document
         run: make db-doc
 
       - name: Push changes to the repository
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v5.2.0
         with:
           commit_message: "chore(db): auto generate docs"
           commit_user_name: "github-actions[bot]"
