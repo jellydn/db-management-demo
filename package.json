@@ -14,7 +14,7 @@
     "typeorm-model-generator": "0.4.6"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0 || ^6.0.0"
   },
   "dependencies": {
     "@prisma/client": "5.22.0",
