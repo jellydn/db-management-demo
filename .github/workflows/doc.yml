@@ -28,7 +28,7 @@ jobs:
           - 5432:5432
     steps:
       - name: Checkout .tbls.yml
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
       - name: Install bun
         uses: oven-sh/setup-bun@v1.2.2
       - name: Install dependencies
